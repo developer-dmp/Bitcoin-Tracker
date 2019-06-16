@@ -15,15 +15,7 @@ class BlockChartApplication : Application()
         {
             return blockChartApplication
         }
-
-        fun <T: ViewModel> getViewModel(modelClass: Class<T>): T
-        {
-            return getContext().viewModelProvider.get(modelClass)
-        }
     }
-
-    private val viewModelProvider = ViewModelProvider(ViewModelStore(),
-            ViewModelProvider.AndroidViewModelFactory.getInstance(this))
 
     override fun onCreate()
     {

@@ -1,9 +1,10 @@
-package com.dmp.blockchart
+package com.dmp.blockchart.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import com.dmp.blockchart.*
 import com.dmp.blockchart.livedata.MarketPriceViewModel
 import com.dmp.blockchart.network.DataPoint
 import com.dmp.blockchart.network.MarketPriceResponse
@@ -16,7 +17,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 import java.text.NumberFormat
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.collections.ArrayList
 
 class MainActivity : AppCompatActivity() {
 
@@ -105,7 +105,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getFormattedTextFromEntry(entry: Entry): String {
-        val formattedDate = SimpleDateFormat("MMM. dd, yyyy", Locale.getDefault()).format(Date(entry.x.toLong() * 1000L))
+        val formattedDate =
+            SimpleDateFormat("MMM. dd, yyyy", Locale.getDefault()).format(Date(entry.x.toLong() * 1000L))
         val formattedPrice = NumberFormat.getCurrencyInstance().format(entry.y)
 
         return "$formattedDate => $formattedPrice"
