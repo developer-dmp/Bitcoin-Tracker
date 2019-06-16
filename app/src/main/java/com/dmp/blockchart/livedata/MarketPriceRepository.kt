@@ -9,7 +9,9 @@ import retrofit2.Call
 class MarketPriceRepository
 {
     /**
-     * Helper to make an API call and
+     * Helper to make an API call and handle the error case.
+     * We publish a response to the live data so our observers will
+     * react to the incoming data.
      */
     fun fetchMarketPriceLiveData(): MutableLiveData<MarketPriceResponse>
     {

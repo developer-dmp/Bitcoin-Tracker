@@ -16,7 +16,6 @@ class MarketPriceViewModel(application: Application): AndroidViewModel(applicati
 
     val selectedEntryLiveData = MutableLiveData<Entry?>()
 
-
     fun setSelectedEntry(entry: Entry?)
     {
         selectedEntryLiveData.postValue(entry)
